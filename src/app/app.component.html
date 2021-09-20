@@ -1,0 +1,186 @@
+<!-- <h1>DIRECTIVES </h1>
+<h2>this is ngif examle</h2>
+<input type="radio" name="radio1" (click)="changevalue(true)">true
+<input type="radio" name="radio1" (click)="changevalue(false)">false
+<div *ngIf="isvalid">
+    this is valid data
+</div>
+<div *ngIf="!isvalid">
+    this is not valid data
+</div> -->
+
+<!-- <h2>this is ngif with else examle</h2>
+<input type="radio" name="radio1" (click)="changevalue(true)">true
+<input type="radio" name="radio1" (click)="changevalue(false)">false
+<div *ngIf="isvalid; else elseBlock">
+    this is valid data
+</div>
+<ng-template #elseBlock>
+<div>
+    this is not valid data using else block
+</div> 
+</ng-template> -->
+
+
+ <!--  <h2>this is ngif with then,else examle</h2>
+<input type="radio" name="radio1" (click)="changevalue(true)">true
+<input type="radio" name="radio1" (click)="changevalue(false)">false
+<div *ngIf="isvalid; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+    <div>this is valid data using then block</div>
+</ng-template>
+
+<ng-template #elseBlock>
+<div>this is not valid data using else block</div> 
+</ng-template> -->
+
+
+<!-- <h2>using ngfor</h2>
+<ul>
+    <li *ngFor="let student of Students; let i=index; let f=first;let l=last ;let o=odd; let e=even">
+    
+        {{i+1}}
+        {{student.name}}- 
+        {{f}}
+        {{o}}
+        {{l}}-
+        {{e}}
+        
+    </li>
+</ul>
+ -->
+<!-- <h2>this is trackby example</h2>
+<table border="1">
+    <tr *ngFor="let s of students;let i=index;trackBy:trackbystudentid">
+        
+        <td>{{i+1}}</td>
+        <td>{{s.studentid}} </td>
+        <td>{{s.name}}</td>
+        <td>{{s.gender}}</td>
+        <td>{{s.age}}</td>
+        <td>{{s.course}}</td>
+    </tr>
+</table>
+<br>
+<button (click)="getmorestudents()">get more student</button> -->
+ 
+
+<!-- <h1>Grouping by example in ngfor</h1>
+<ul *ngFor="let group of Contrydetails">
+    <li>{{group.country}}</li>
+<ul>
+    <li *ngFor="let person of group.people">
+        {{person.name}}
+    </li>
+</ul>
+</ul> -->
+
+
+<!-- <h2>using ngswitch</h2>
+<select (change)="setvalue($event)">
+    <option value= ""> --select--</option>
+    <option value ="one">  One</option>
+    <option value ="two"> Two</option>
+    <option value ="three"> Three</option>
+    <option value ="another"> Default</option>
+</select>
+<div [ngSwitch]="choose">
+    <h3 *ngSwitchCase="'one'">First</h3>
+    <h3 *ngSwitchCase="'two'">Second</h3>
+    <h3 *ngSwitchCase="'three'">Third</h3>
+    <h3 *ngSwitchDefault>Default</h3>
+
+</div>  -->
+
+ <h1>Attribute directive</h1>
+
+<div [ngStyle]="{'color':colorval, 'background-color': 'gray'}">this is ngstyle example</div>
+<br>
+<div [ngClass]=classname>this is ngclass example</div> 
+<div [ngClass]="[classname, classname1]">this is ngclass example using two class </div>
+<h1 [ngStyle]="{'color':'black'}">Data binding</h1>
+
+
+
+
+  <!-- <h1>DATA BINDING</h1>
+ <h2 [ngStyle]="{'color':colorval, 'background-color':'gray'}">Data binding means to bind the data from view to component or vice versa.<br>
+     Data binding means we can understand- interacting with data.<br><br>
+
+     Types of data binding --<br><br>
+     *one way data binding-<br>
+       Component to view-<br>
+         .interpolation<br>
+         .Proprty binding<br>
+         .Style binding<br><br>
+        
+        View to component-<br>
+         .Event binding<br><br>
+       
+    *Two way data binding<br>
+      .Data flow from view to component and back to component from the view    
+ </h2>
+
+
+
+ <h2 [ngStyle]="{'color':'blue'}">INTERPOLATION</h2>
+<h3>.It is a technology that allow to user to bind the data from component to view.<br>
+    .Can be used for integer,strings,object,array and much more<br>
+    .Syntax for defining interpolation is double Curly braces.
+</h3>
+<div>{{subTittle}}</div>
+<div>{{opName}}</div>
+<div>{{user.userName}} {{user.userId}}</div>
+
+
+
+<h2 [ngStyle]="{'color':'blue'}">PROPERTY BINDING</h2>
+<p [innerHTML] = 'subTittle'></p>
+<input [placeholder]="placeholdrVal">
+
+
+<h2 [ngStyle]="{'color':'green'}">Event BINDING</h2>
+<h3>Is a technique that allow the user to bind events of element from view to coponent.<br>
+      
+</h3> 
+
+<button (click)="showAlert(10);">Click me</button>
+
+
+
+<h2 [ngStyle]="{'color':'red'}">Two way data BINDING</h2>
+<h3>It is a technique that allows the user to bind data events of elements from view to component and vice versa.<br>
+    THe data flow is both way  i.e from view to component and component to view.<br>
+    Two way data binding is combination of proprty bindng ans event binding<br>
+    We bind data usind ngModel </h3>
+
+<input [(ngModel)]= "fullName"/><br>
+<p>{{fullName}}</p>
+
+
+
+
+
+<h2 [ngStyle]="{'color':'green'}">PIPES</h2>
+<h3>Pipes are used to transform the data<br>
+    Pipes are written using the pipe operator(|)<br><br>
+    Types of pipes--<br>
+    *Built in pipes<br>
+        .Lowercase<br>
+        .Uppercase<br>
+        .Currency<br>
+        .Date<br>
+        .JSON
+</h3>
+
+
+<div>{{user.userName | uppercase }}<br>
+     {{user.firstName | uppercase }}<br>
+     {{user.lastName | lowercase }}<br>
+     {{user.DOB | date }}<br>
+     {{user | json}}<br>
+     {{user.salary | currency }}
+    </div>
+ -->
+ 
+ 
